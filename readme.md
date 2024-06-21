@@ -17,7 +17,7 @@ The actual frontend that is compiled to Next.js can be found in the `.web` direc
 To run the frontend locally, use the following commands:
 
 ```sh
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 pip install -r pysite/requirements.txt
 reflex run --env dev --frontend-port 7443 --backend-port 7444
