@@ -2,5 +2,6 @@
 *.py[cod]
 __pycache__/
 venv/
-.*
-
+.well-known/
+.htaccess
+.user.ini
