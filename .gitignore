@@ -1,7 +1,13 @@
 *.db
 *.py[cod]
-__pycache__/
-venv/
-.well-known/
 .htaccess
 .user.ini
+.web/
+.web/components/
+.web/pages/
+.web/utils/
+
+.well-known/
+__pycache__/
+assets/external/
+venv/
