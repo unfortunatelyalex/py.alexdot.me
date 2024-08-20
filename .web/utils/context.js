@@ -20,6 +20,8 @@ export const initialEvents = () => []
 
 export const isDevMode = true
 
+export const lastCompiledTimeStamp = "2024-08-20 08:30:08.924300"
+
 export function UploadFilesProvider({ children }) {
   const [filesById, setFilesById] = useState({})
   refs["__clear_selected_files"] = (id) => setFilesById(filesById => {

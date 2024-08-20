@@ -12,7 +12,6 @@ import { EventLoopProvider, StateProvider, defaultColorMode } from "/utils/conte
 import { ThemeProvider } from 'next-themes'
 
 
-
 function AppWrap({children}) {
 
 
