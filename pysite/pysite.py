@@ -68,8 +68,8 @@ def index() -> rx.Component:
                 class_name=f"relative transition",
             ),
             class_name=rx.color_mode_cond(
-                light="static w-screen h-screen bg-white transition",
-                dark="static w-screen h-screen bg-black transition",
+                light="static w-screen h-screen bg-slate-100 transition",
+                dark="static w-screen h-screen bg-gray-900 transition",
             )
             )
 
