@@ -69,7 +69,7 @@ def index() -> rx.Component:
             ),
             class_name=rx.color_mode_cond(
                 light="static w-screen h-screen bg-slate-100 transition",
-                dark="static w-screen h-screen bg-gray-900 transition",
+                dark="static w-screen h-screen dark-100 transition",
             )
             )
 

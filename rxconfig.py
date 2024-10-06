@@ -12,6 +12,11 @@ config = PysiteConfig(
     styleshit="main.css",
     tailwind={
         "theme": {
+            "colors": {
+                "dark": {
+                    100: "#111113",
+                }
+            },
             "extend": {
             }
         },

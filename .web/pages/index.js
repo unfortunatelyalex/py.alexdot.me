@@ -25,6 +25,46 @@ import NextHead from "next/head"
 
 
 
+const pulse = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`
+
+
+export function Fragment_eb5c60a6299c139bdb6b649d45fe7588 () {
+  const { resolvedColorMode } = useContext(ColorModeContext)
+  const { toggleColorMode } = useContext(ColorModeContext)
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+
+  return (
+    <Fragment>
+  {isTrue((resolvedColorMode === "light")) ? (
+  <Fragment>
+  <img className={"h-12 w-12 transition"} onClick={toggleColorMode} src={"/images/black_sun_4096.png"}/>
+</Fragment>
+) : (
+  <Fragment>
+  <img className={"h-12 w-12 transition"} onClick={toggleColorMode} src={"/images/white_moon_4096.png"}/>
+</Fragment>
+)}
+</Fragment>
+  )
+}
+
+        function ComponentMap_b05fc871f4c07d9afa8e52fc86215f3f () {
+            const { resolvedColorMode } = useContext(ColorModeContext)
+            return (
+                ({ ["h1"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h1"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"6"} {...props}>  {children}</RadixThemesHeading>)), ["h2"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h2"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"5"} {...props}>  {children}</RadixThemesHeading>)), ["h3"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h3"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"4"} {...props}>  {children}</RadixThemesHeading>)), ["h4"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h4"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"3"} {...props}>  {children}</RadixThemesHeading>)), ["h5"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h5"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"2"} {...props}>  {children}</RadixThemesHeading>)), ["h6"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h6"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"1"} {...props}>  {children}</RadixThemesHeading>)), ["p"] : (({node, children, ...props}) => (<RadixThemesText as={"p"} css={({ ["marginTop"] : "1em", ["marginBottom"] : "1em" })} {...props}>  {children}</RadixThemesText>)), ["ul"] : (({node, children, ...props}) => (<ul css={({ ["listStyleType"] : "disc", ["marginTop"] : "1em", ["marginBottom"] : "1em", ["marginLeft"] : "1.5rem", ["direction"] : "column" })}>  {children}</ul>)), ["ol"] : (({node, children, ...props}) => (<ol css={({ ["listStyleType"] : "decimal", ["marginTop"] : "1em", ["marginBottom"] : "1em", ["marginLeft"] : "1.5rem", ["direction"] : "column" })}>  {children}</ol>)), ["li"] : (({node, children, ...props}) => (<li css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })}>  {children}</li>)), ["a"] : (({node, children, ...props}) => (<RadixThemesLink css={({ ["&:hover"] : ({ ["color"] : "var(--accent-8)" }) })} {...props}>  {children}</RadixThemesLink>)), ["code"] : (({node, inline, className, children, ...props}) => {     const match = (className || '').match(/language-(?<lang>.*)/);     const language = match ? match[1] : '';     if (language) {     (async () => {       try {         const module = await import(`react-syntax-highlighter/dist/cjs/languages/prism/${language}`);         SyntaxHighlighter.registerLanguage(language, module.default);       } catch (error) {         console.error(`Error importing language module for ${language}:`, error);       }     })();   }     return inline ? (         <RadixThemesCode {...props}>  {children}</RadixThemesCode>     ) : (         <SyntaxHighlighter children={children} css={({ ["marginTop"] : "1em", ["marginBottom"] : "1em" })} customStyle={({ ["marginTop"] : "1em", ["marginBottom"] : "1em" })} language={language} style={((resolvedColorMode === "light") ? oneLight : oneDark)} wrapLongLines={true} {...props}/>     );       }), ["codeblock"] : (({node, children, ...props}) => (<SyntaxHighlighter children={children} css={({ ["marginTop"] : "1em", ["marginBottom"] : "1em" })} customStyle={({ ["marginTop"] : "1em", ["marginBottom"] : "1em" })} language={"python"} style={((resolvedColorMode === "light") ? oneLight : oneDark)} wrapLongLines={true} {...props}/>)) })
+            )
+        }
+        
+
 export function Div_24a2e81d0c5d3cb5b5f786fdef44e514 () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
 
@@ -37,23 +77,13 @@ export function Div_24a2e81d0c5d3cb5b5f786fdef44e514 () {
   )
 }
 
-const pulse = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-`
-
-
-export function Flex_e941741e1460f5ad369b4933e3907b07 () {
+export function Flex_37e7aef7479caee71ef2fc4a7ca6d2b5 () {
   const { resolvedColorMode } = useContext(ColorModeContext)
 
 
 
   return (
-    <RadixThemesFlex className={((resolvedColorMode === "light") ? "static w-screen h-screen bg-slate-100 transition" : "static w-screen h-screen bg-gray-900 transition")}>
+    <RadixThemesFlex className={((resolvedColorMode === "light") ? "static w-screen h-screen bg-slate-100 transition" : "static w-screen h-screen dark-100 transition")}>
   <RadixThemesBox className={"absolute top-4 left-0 mx-4 flex font-extrabold w-fit items-stretch"}>
   <RadixThemesFlex align={"start"} className={"rx-Stack"} direction={"row"} gap={"3"}>
   <RadixThemesHeading className={"select-none mx-4"} css={({ ["fontFamily"] : "canterbury", ["--default-font-family"] : "canterbury", ["fontSize"] : "4.5em" })}>
@@ -109,6 +139,24 @@ export function Flex_e941741e1460f5ad369b4933e3907b07 () {
   )
 }
 
+export function Fragment_e521b13e556da291bcec5187a783ea81 () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+
+  return (
+    <Fragment>
+  {isTrue((connectErrors.length > 0)) ? (
+  <Fragment>
+  <LucideWifiOffIcon css={({ ["color"] : "crimson", ["zIndex"] : 9999, ["position"] : "fixed", ["bottom"] : "33px", ["right"] : "33px", ["animation"] : (pulse+" 1s infinite") })} size={32}/>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+  )
+}
+
 export function Toaster_9d6e054b03c6e5d1bea1c0a5576b4e6d () {
   const { resolvedColorMode } = useContext(ColorModeContext)
 
@@ -138,54 +186,6 @@ export function Toaster_9d6e054b03c6e5d1bea1c0a5576b4e6d () {
   )
 }
 
-export function Fragment_e521b13e556da291bcec5187a783ea81 () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-
-  return (
-    <Fragment>
-  {isTrue((connectErrors.length > 0)) ? (
-  <Fragment>
-  <LucideWifiOffIcon css={({ ["color"] : "crimson", ["zIndex"] : 9999, ["position"] : "fixed", ["bottom"] : "33px", ["right"] : "33px", ["animation"] : (pulse+" 1s infinite") })} size={32}/>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
-  )
-}
-
-export function Fragment_eb5c60a6299c139bdb6b649d45fe7588 () {
-  const { resolvedColorMode } = useContext(ColorModeContext)
-  const { toggleColorMode } = useContext(ColorModeContext)
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-
-  return (
-    <Fragment>
-  {isTrue((resolvedColorMode === "light")) ? (
-  <Fragment>
-  <img className={"h-12 w-12 transition"} onClick={toggleColorMode} src={"/images/black_sun_4096.png"}/>
-</Fragment>
-) : (
-  <Fragment>
-  <img className={"h-12 w-12 transition"} onClick={toggleColorMode} src={"/images/white_moon_4096.png"}/>
-</Fragment>
-)}
-</Fragment>
-  )
-}
-
-        function ComponentMap_b05fc871f4c07d9afa8e52fc86215f3f () {
-            const { resolvedColorMode } = useContext(ColorModeContext)
-            return (
-                ({ ["h1"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h1"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"6"} {...props}>  {children}</RadixThemesHeading>)), ["h2"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h2"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"5"} {...props}>  {children}</RadixThemesHeading>)), ["h3"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h3"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"4"} {...props}>  {children}</RadixThemesHeading>)), ["h4"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h4"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"3"} {...props}>  {children}</RadixThemesHeading>)), ["h5"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h5"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"2"} {...props}>  {children}</RadixThemesHeading>)), ["h6"] : (({node, children, ...props}) => (<RadixThemesHeading as={"h6"} css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })} size={"1"} {...props}>  {children}</RadixThemesHeading>)), ["p"] : (({node, children, ...props}) => (<RadixThemesText as={"p"} css={({ ["marginTop"] : "1em", ["marginBottom"] : "1em" })} {...props}>  {children}</RadixThemesText>)), ["ul"] : (({node, children, ...props}) => (<ul css={({ ["listStyleType"] : "disc", ["marginTop"] : "1em", ["marginBottom"] : "1em", ["marginLeft"] : "1.5rem", ["direction"] : "column" })}>  {children}</ul>)), ["ol"] : (({node, children, ...props}) => (<ol css={({ ["listStyleType"] : "decimal", ["marginTop"] : "1em", ["marginBottom"] : "1em", ["marginLeft"] : "1.5rem", ["direction"] : "column" })}>  {children}</ol>)), ["li"] : (({node, children, ...props}) => (<li css={({ ["marginTop"] : "0.5em", ["marginBottom"] : "0.5em" })}>  {children}</li>)), ["a"] : (({node, children, ...props}) => (<RadixThemesLink css={({ ["&:hover"] : ({ ["color"] : "var(--accent-8)" }) })} {...props}>  {children}</RadixThemesLink>)), ["code"] : (({node, inline, className, children, ...props}) => {     const match = (className || '').match(/language-(?<lang>.*)/);     const language = match ? match[1] : '';     if (language) {     (async () => {       try {         const module = await import(`react-syntax-highlighter/dist/cjs/languages/prism/${language}`);         SyntaxHighlighter.registerLanguage(language, module.default);       } catch (error) {         console.error(`Error importing language module for ${language}:`, error);       }     })();   }     return inline ? (         <RadixThemesCode {...props}>  {children}</RadixThemesCode>     ) : (         <SyntaxHighlighter children={children} css={({ ["marginTop"] : "1em", ["marginBottom"] : "1em" })} customStyle={({ ["marginTop"] : "1em", ["marginBottom"] : "1em" })} language={language} style={((resolvedColorMode === "light") ? oneLight : oneDark)} wrapLongLines={true} {...props}/>     );       }), ["codeblock"] : (({node, children, ...props}) => (<SyntaxHighlighter children={children} css={({ ["marginTop"] : "1em", ["marginBottom"] : "1em" })} customStyle={({ ["marginTop"] : "1em", ["marginBottom"] : "1em" })} language={"python"} style={((resolvedColorMode === "light") ? oneLight : oneDark)} wrapLongLines={true} {...props}/>)) })
-            )
-        }
-        
-
 export default function Component() {
 
   return (
@@ -194,7 +194,7 @@ export default function Component() {
   <Div_24a2e81d0c5d3cb5b5f786fdef44e514/>
   <Toaster_9d6e054b03c6e5d1bea1c0a5576b4e6d/>
 </Fragment>
-  <Flex_e941741e1460f5ad369b4933e3907b07/>
+  <Flex_37e7aef7479caee71ef2fc4a7ca6d2b5/>
   <NextHead>
   <title>
   {"WORK IN PROGRESS | project alex."}
