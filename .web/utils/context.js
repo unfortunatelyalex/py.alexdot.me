@@ -1,5 +1,5 @@
-import { createContext, useContext, useMemo, useReducer, useState } from "react"
-import { applyDelta, Event, hydrateClientStorage, useEventLoop, refs } from "/utils/state.js"
+import { createContext, useContext, useMemo, useReducer, useState, createElement } from "react"
+import { applyDelta, Event, hydrateClientStorage, useEventLoop, refs } from "$/utils/state.js"
 
 export const initialState = {}
 
@@ -14,13 +14,15 @@ export const clientStorage = {}
 
 export const state_name = undefined
 
+export const exception_state_name = undefined
+
 export const onLoadInternalEvent = () => []
 
 export const initialEvents = () => []
 
 export const isDevMode = true
 
-export const lastCompiledTimeStamp = "2024-10-05 22:28:47.883903"
+export const lastCompiledTimeStamp = "2025-06-10 08:52:09.087205"
 
 export function UploadFilesProvider({ children }) {
   const [filesById, setFilesById] = useState({})
@@ -29,11 +31,7 @@ export function UploadFilesProvider({ children }) {
     delete newFilesById[id]
     return newFilesById
   })
-  return (
-    <UploadFilesContext.Provider value={[filesById, setFilesById]}>
-      {children}
-    </UploadFilesContext.Provider>
-  )
+  return createElement(UploadFilesContext, {value:[filesById, setFilesById]}, children);
 }
 
 export function EventLoopProvider({ children }) {
@@ -43,11 +41,7 @@ export function EventLoopProvider({ children }) {
     initialEvents,
     clientStorage,
   )
-  return (
-    <EventLoopContext.Provider value={[addEvents, connectErrors]}>
-      {children}
-    </EventLoopContext.Provider>
-  )
+  return createElement(EventLoopContext, {value:[addEvents, connectErrors]}, children);
 }
 
 export function StateProvider({ children }) {
@@ -57,8 +51,6 @@ export function StateProvider({ children }) {
   }, [])
 
   return (
-      <DispatchContext.Provider value={dispatchers}>
-        {children}
-      </DispatchContext.Provider>
+    createElement(DispatchContext.Provider, {value: dispatchers}, children),
   )
 }
